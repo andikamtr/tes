@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Jadwal;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -14,7 +15,6 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use frontend\models\Mahasiswa;
 
 /**
  * Site controller
@@ -75,7 +75,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $data['jadwalWebinar'] = Jadwal::find()->all();
+        return $this->render('index',$data);
     }
 
     /**
