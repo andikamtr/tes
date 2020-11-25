@@ -15,13 +15,11 @@ $this->title = 'Webinar';
     </div>
 
     <div class="body-content">
-
-        <div class="row">
+    <h1>Daftar </h1>
+        <div class="row" style="text-align:center">
         <?php foreach($jadwalWebinar as $m) : ?>
             <div class="col-lg-4">
-
                 <h2><?= $m->webinar->judul?></h2>
-
                 <p><?= $m->webinar->tema?></p>
                 <p><?= $m->penyelenggara->no_hp?></p>
                 <p><?= $m->penyelenggara->nama?></p>
